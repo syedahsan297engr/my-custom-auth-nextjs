@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { JwtPayload } from "jsonwebtoken";
 
 export const SigninFormSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email." }).trim(),
@@ -22,3 +23,8 @@ export type FormState =
       message?: string;
     }
   | undefined;
+
+export interface SessionPayload extends JwtPayload {
+  userId: string;
+  expiresAt: Date;
+}
