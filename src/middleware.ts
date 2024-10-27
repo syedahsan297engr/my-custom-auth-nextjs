@@ -4,7 +4,7 @@ import { cookies } from "next/headers";
 import { verifySession } from "./libs/dal";
 
 // 1. Specify protected and public routes
-const protectedRoutes = ["/home"];
+const protectedRoutes = ["/home", "/users"];
 const publicRoutes = ["/login"];
 
 export default async function middleware(req: NextRequest) {
